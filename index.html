@@ -64,63 +64,74 @@
 
                     type: 'bubble',
                       data: {
-                      labels: "Africa",
                       datasets: [
                         {
                           label: ["River Street , Clerkenwell"],
-                          backgroundColor: "rgba(255,221,50,0.2)",
+                          backgroundColor: "rgba(255,221,50,0.5)",
                           borderColor: "rgba(255,221,50,1)",
                           data: [{
                             x: -0.109970527,
                             y: 51.52916347,
-                            r: 15
+                            r: 6
                           }]
                         }, {
                           label: ["Phillimore Gardens, Kensington"],
-                          backgroundColor: "rgba(60,186,159,0.2)",
+                          backgroundColor: "rgba(60,186,159,0.5)",
                           borderColor: "rgba(60,186,159,1)",
                           data: [{
                             x: -0.197574246,
                             y: 51.49960695,
-                            r: 10
+                            r: 6
                           }]
                         }, {
                           label: ["Christopher Street, Liverpool Street"],
-                          backgroundColor: "rgba(0,0,0,0.2)",
+                          backgroundColor: "rgba(0,0,0,0.5)",
                           borderColor: "#000",
                           data: [{
                             x: -0.084605692,
                             y: 51.52128377,
-                            r: 15
+                            r: 6
                           }]
                         }, {
                           label: ["St. Chad's Street, King's Cross"],
-                          backgroundColor: "rgba(193,46,12,0.2)",
-                          borderColor: "rgba(193,46,12,1)",
+                          backgroundColor: "rgba(255,0,0,0.5)",
+                          borderColor: "rgba(255,0,0,1)",
                           data: [{
                             x: -0.120973687,
                             y: 51.53005939,
-                            r: 15
+                            r: 6
                           }]
                         }
                       ]
                     },
                     options: {
+                      legend: {
+                        display: false
+                      },
 
                       title: {
                         display: true,
-                        text: 'Temperature at Santander Bike Dccks'
+                        text: 'Temperature at Santander Bike Docks'
                       }, scales: {
                         yAxes: [{
+                            scaleLabel: {
+                              display: true,
+                              labelString: "Latitude"
+                            },
+
                             ticks: {
-                                min: 51.27,
+                                min: 51.29,
                                 max: 51.7
                             }
 
                         }],
                         xAxes: [{
+                          scaleLabel: {
+                            display: true,
+                            labelString: "Longitude"
+                          },
                           ticks: {
-                                min: -0.5,
+                                min: -0.52,
                                 max: 0.31
                           }
 
