@@ -158,11 +158,11 @@
           <p> This graph shows the average Santander Bike usage over time</p>
         </div>
         <div>
-            <canvas id="rawTemp" width="600" height="200"></canvas>
+            <canvas id="rawTemp" width="600" height="400"></canvas>
 
                 <script>
                     function parseData(createGraph){
-                        Papa.parse("https://raw.githubusercontent.com/sanish96/DE4-SIOT/master/Data%20-%20Sheet.csv", {
+                        Papa.parse("https://raw.githubusercontent.com/sanish96/DE4-SIOT/master/Data.csv", {
                             download: true,
                             complete: function(results){
                                 createGraph(results.data)
@@ -184,8 +184,8 @@
                         var temp = [];
 
                         for (var i = 1; i <data.length; i++){
-                            time.push(data[50][5*i-2]);
-                            temp.push(data[50][5*i-1]);
+                            time.push(data[49][5*i-2]);
+                            temp.push(data[49][5*i-1]);
                         }
 
                         console.log(time);
