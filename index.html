@@ -13,6 +13,10 @@
 
         z-index: -1;
     }
+    #bg {
+    background-image: url(background2.jpg);
+
+    }
     </style>
 </head>
 <body>
@@ -24,7 +28,7 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ornare velit at est fringilla, eu ultricies mauris bibendum. </p>
         </div>
         <div>
-          <h2>Santander Bike Usage</h2>
+          <h2>Average Santander Bike Usage against Weather Conditions</h2>
           <p> This graph shows the average Santander Bike usage over time</p>
           <canvas id="line-chart" width="800" height="400"></canvas>
             <script>
@@ -60,10 +64,11 @@
             </script>
         </div>
         <div>
-          <h2>Santander Bike Usage</h2>
+          <h2>Santander Bike Usage in Different Locations</h2>
           <p> This graph shows some weather and Santander Bike dock usage in London</p>
-          <img src="background.jpg" alt="Map of London" width="85%" height="125%" >
-          <canvas id="bubble-chart" width="594" height="475"></canvas>
+        </div>
+        <div id="bg">
+          <canvas id="bubble-chart" width="600px" height="320px"></canvas>
             <script>
                 new Chart(document.getElementById("bubble-chart"), {
 
@@ -145,7 +150,13 @@
                     }
                 });
             </script>
-          </div>
+        </div>
+        <div>
+          <h2>Santander Bike Usage</h2>
+          <p> This graph shows the average Santander Bike usage over time</p>
+        </div>
+
+        </div>
       </div>
     </div>
 
