@@ -161,49 +161,58 @@
             <canvas id="rawTemp" width="600" height="200"></canvas>
 
                 <script>
-                    Papa.parse("Data - Sheet.csv", {
-                        download: true,
-                        complete: function(results){
-                            createGraph(results.data)
-                        },
-                        error: function(err){
-                            console.log(err)
+                    function parseData(createGraph){
+                        Papa.parse("https://raw.githubusercontent.com/sanish96/DE4-SIOT/master/Data%20-%20Sheet.csv", {
+                            download: true,
+                            complete: function(results){
+                                createGraph(results.data)
+                            },
+                            error: function(err){
+                                console.log(err)
+                            }
+                        })
+                    }
+
+
+                    function createGraph(data){
+                        console.log(data)
+
+                        var raw_temp = document.getElementById('rawTemp').getContext('2d');
+
+                        // Buffers for storing the selected array data for making chart
+                        var time = [];
+                        var temp = [];
+
+                        for (var i = 0; i <data.length; i++){
+                            time.push(data[i][0]);
+                            temp.push(data[i][3]);
                         }
-                    })
 
+                        console.log(time);
+                        console.log(temp);
 
-                    console.log(data)
+                        var raw_data = {
+                            //labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+                            labels: time,
+                            datasets: [{
+                                label: "Temperature in Celsius",
+                                fill: false,
+                                backgroundColor: red,
+                                borderColor: red,
+                                data: temp
+                            }]
+                        }
 
-                    var raw_temp = document.getElementById('rawTemp').getContext('2d');
-
-                    // Buffers for storing the selected array data for making chart
-                    var time = [];
-                    var temp = [];
-
-                    for (var i = 0; i <data.length; i++){
-                        time.push(data[i][0]);
-                        temp.push(data[i][3]);
+                        var chart_raw_temp = new Chart(raw_temp,{
+                            type: 'line',
+                            data: raw_data
+                        });
                     }
+                    parseData(createGraph)
 
-                    console.log(time);
-                    console.log(temp);
-
-                    var raw_data = {
-                        //labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-                        labels: time,
-                        datasets: [{
-                            label: "Temperature in Celsius",
-                            fill: false,
-                            backgroundColor: red,
-                            borderColor: red,
-                            data: temp
-                        }]
-                    }
-
-                    var chart_raw_temp = new Chart(raw_temp,{
-                        type: 'line',
-                        data: raw_data
-                    });
+                    var blue = 'rgb(0, 132, 180)';
+                    var orange = 'rgb(180, 102, 0)';
+                    var red = 'rgb(180, 12, 0)';
 
                 </script>
 
