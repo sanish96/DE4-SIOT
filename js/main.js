@@ -113,7 +113,7 @@ var bubble_map_trends = new Chart(map_trends, {
 
 //CSV DATA
 function parseData(createGraph){
-    Papa.parse("https://raw.githubusercontent.com/sanish96/DE4-SIOT/master/Data.csv", {
+    Papa.parse("https://raw.githubusercontent.com/sanish96/DE4-SIOT/master/data/Data.csv", {
         download: true,
         complete: function(results){
             createGraph(results.data)
