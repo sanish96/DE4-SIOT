@@ -182,3 +182,28 @@ parseData(createGraph)
 var blue = 'rgb(0, 132, 180)';
 var orange = 'rgb(180, 102, 0)';
 var red = 'rgb(180, 12, 0)';
+
+var average_trends = document.getElementById("bar-chart-grouped")
+var bar_average_trends = new Chart(average_trends,{
+    type: 'bar',
+    data: {
+      labels: ["1900", "1950", "1999", "2050"],
+      datasets: [
+        {
+          label: "Africa",
+          backgroundColor: "#3e95cd",
+          data: [133,221,783,2478]
+        }, {
+          label: "Europe",
+          backgroundColor: "#8e5ea2",
+          data: [408,547,675,734]
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Population growth (millions)'
+      }
+    }
+});
