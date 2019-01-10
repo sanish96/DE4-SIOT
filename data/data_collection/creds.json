@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "siot-001",
+  "private_key_id": "4ebf6786b08254410990ff31646e9c204430bd14",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDI/ZPqJ0SF+qXk\nH5P+oThKUpNAOxw0iwauKcFCRty3ZsrtZww/0jsPhkQNLrw6ej1hghpt844mrMvO\nV/cHh05B4ZBtoGBBD5OrpWPG2UORBGPM7Z78FR/3VvIqpaE/GTACInt7ZA1oAyso\nMzx6uKDfuLoe2p0tobHKT2rE4/Ews0szLBzAEJfbiItQSwhuRK9mHxz8Z2gj63DR\nKhasEnqmS1l2Yc96bi6rz9wiPSF9/EOHMCbUIXZBVQuy6ZH80XvBs3/WwRrpHWIR\ngt1AWw13mi3rbPjoGIRiVUqsMUNrlSqyy/OMB2R2/9UL7hs9aTExjovdeHYEpQEt\nlDv3TVTfAgMBAAECggEAAZex7DN6BfLkDVOv3vFZg4wahk2fUE4f/Uhvs3BPcfm4\nZHsrQvbExC0nLSwioNJG2fI50fTtFdmmqOd4rAvijv/vjFEcSP6Lmki3oYhwm1SO\nAL5mZ2E4nTE/UR7ntb+RfIdqRjS7vwg9HAST6axzaLuLQ7VSUBRkVvZ3j2VAsLTL\n9DijayWZd7w/fJMVA/KE2ofb8FM6WEdxOT/Qc5EDB1ODHZw19jLCDSrnWJIBxWvf\nqO2vN0B/n9M0oUsj3ZH2ILVrPdxs6t8CdN24aka2mzrF5SoQeBtzv23OhZeUeJUQ\nYphJ+Rp0ii77MUsiJSb1felNmKB3PBjfmoekCchFuQKBgQDxEH+tzdG+Xl/J3S1N\nPTIYIuES1ji/Gu/gOexPH7gNdpSuHIvg3xlEe8tCYfM9UT9yus/aIZ7KHRopfr4w\nIRcS6wn2jbzUH0l5Y6eQjUPL7WYdZ90ylqwo23exMFH3ff7cyWQ3b9IvqEIEGI5b\ny7uqJGPX5VUuCuer7JlBzjOV/QKBgQDVcXhszGrqS+4xO8MnWiZEfLYGrYezfW6a\n4l4cpZ6EZrtPmGy2+sG9yQGZzJSECveU5IDoBNbAi+k/D7tBZMr3wWfaWU73n62l\njbm1WtqJMRFabA8lPRvcdz1DS+6eUUIpLSzcLA3NdXc0U+im3YURJrEbq+fo1Wqo\nuLnDlTFfCwKBgQDLMzgc/pBdotmlpC3KnNn8JHKK2U6uMHuhC9JZBAi2OI2tklyK\naiS3aI52X3CU8EbGZBhO6+YYwp1J+w9ALLRxevREA0f3moPpsgoOPDW40V0xTlrT\niNSIAC+NiYieUXOjEpPKcxS+nVtAbp6ZXEvNaK1M0ICTtheBAYhSQwmS1QKBgQDT\nxpcm1BgMyjPWk6ZJKFApyddNfuXSuFSCxrF8GPPUCJ43FlRfpSOP651z/SEqdjs6\ndxJTo2F0gB14XWJ9OsWL11D0u4H3fW5sgddN0oxcbNv77JWGbEB1mbWmTPPAD33m\nnxUQi4FSZwdUWyDOV6KM5uf5PbKHOSFvsIFYRnJLCwKBgEYe+5/LjBi86lOVKcHd\negJisvFxZOUE+bNJWeZ6Bs3AeRVM380iLSswXaiDgT4n/V0jHpBjLkluhDHv2XkI\nuGxyzDGMNdMc0SV35TO1prDqn4W4pq+yq9yDmxjF/e6qz75p9bv1IwGAyRVPsoS9\nABYOoG79WaeeyJiTQ/+FuOAG\n-----END PRIVATE KEY-----\n",
+  "client_email": "siot-service@siot-001.iam.gserviceaccount.com",
+  "client_id": "101616907762847795932",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/siot-service%40siot-001.iam.gserviceaccount.com"
+}
