@@ -57,6 +57,13 @@ normalized_wind = preprocessing.normalize([wind_list])
 
 print normalized_wind
 
+addresses = []
+
+for i in range(50):
+    addresses.append(csvFileArray[i][0])
+
+print addresses
+
 with open('data_averages.csv', mode='wb') as formatting:
     csv_writer = csv.writer(formatting, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
 

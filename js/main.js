@@ -34,86 +34,121 @@ var line_time_trends = new Chart(time_trends, {
   }
 });
 
-//MAP BASED TRENDS
-var map_trends = document.getElementById("map_trends")
-var bubble_map_trends = new Chart(map_trends, {
-      type: 'bubble',
-      data: {
-      datasets: [
-        {
-          label: ["River Street , Clerkenwell"],
-          backgroundColor: "rgba(255,0,0,0.5)",
-          borderColor: "rgba(255,0,0,1)",
-          data: [{
-            x: -0.109970527,
-            y: 51.52916347,
-            r: 11
-          }]
-        }, {
-          label: ["Phillimore Gardens, Kensington"],
-          backgroundColor: "rgba(255,0,0,0.5)",
-          borderColor: "rgba(255,0,0,1)",
-          data: [{
-            x: -0.197574246,
-            y: 51.49960695,
-            r: 17
-          }]
-        }, {
-          label: ["Christopher Street, Liverpool Street"],
-          backgroundColor: "rgba(255,0,0,0.5)",
-          borderColor: "rgba(255,0,0,1)",
-          data: [{
-            x: -0.084605692,
-            y: 51.52128377,
-            r: 16
-          }]
-        }, {
-          label: ["St. Chad's Street, King's Cross"],
-          backgroundColor: "rgba(255,0,0,0.5)",
-          borderColor: "rgba(255,0,0,1)",
-          data: [{
-            x: -0.120973687,
-            y: 51.53005939,
-            r: 3
-          }]
+//CSV BUBBLE DATA
+function parseData(createGraph){
+    Papa.parse("https://raw.githubusercontent.com/sanish96/DE4-SIOT/master/data/Data.csv", {
+        download: true,
+        complete: function(results){
+            createBubble(results.data)
+        },
+        error: function(err){
+            console.log(err)
         }
-      ]
-    },
-    options: {
-      legend: {
-        display: false
-      },
+    })
+}
 
-      title: {
-        display: true,
-        text: 'Temperature at Santander Bike Docks'
-      }, scales: {
-        yAxes: [{
-            scaleLabel: {
-              display: true,
-              labelString: "Latitude"
-            },
 
-            ticks: {
-                min: 51.29,
-                max: 51.7
-            }
+function createBubble(data){
 
-        }],
-        xAxes: [{
-          scaleLabel: {
-            display: true,
-            labelString: "Longitude"
-          },
-          ticks: {
-                min: -0.52,
-                max: 0.31
-          }
 
-        }]
-      }
+    var map_trends2 = document.getElementById('map_trends2');
+
+    // Buffers for storing the selected array data for making chart
+    var address = [];
+    var longitude = [];
+    var latitude = [];
+    var bike = []
+
+    for (var i = 0; i <46; i++){
+        address.push(data[i+3][0]);
+        latitude.push(data[i+3][1]);
+        longitude.push(data[i+3][2])
+        bike.push((data[i+3][3])/1);
     }
-});
+//
+//    var raw_data = {
+//        labels: time,
+//        datasets: [{
+//            label: "Temperature in Celsius",
+//            fill: false,
+//            backgroundColor: red,
+//            borderColor: red,
+//            data: temp
+//        }]
+//    }
+
+    var c = []
+    console.log(address)
+    console.log(latitude)
+    console.log(longitude)
+    console.log(bike)
+
+    for(var i=0;i<46;i++)
+        {
+            var obj = [{x:longitude[i],y:latitude[i],r:bike[i]}];
+            c.push(obj);
+        }
+
+    console.log(c)
+
+    var chart_raw_temp = new Chart(map_trends2,{
+        type: 'bubble',
+        data:{
+            datasets:
+              (function (c) {
+                  var out = [];
+                  for(var i=0; i<address.length; i++) {
+                  out.push({
+                        label: address[i],
+                        data: c[i],
+                        backgroundColor: "rgba(255,0,0,0.5)",
+                        borderColor: "rgba(255,0,0,1)"
+                      })
+                  }
+                  console.log(out);
+                  return out;
+              })(c)
+           ,
+        },
+        options: {
+          legend: {
+            display: false
+          },
+
+          title: {
+            display: false,
+            text: 'Bicycles Available at Santander Docks'
+          }, scales: {
+            yAxes: [{
+                scaleLabel: {
+                  display: true,
+                  labelString: "Latitude"
+                },
+
+                ticks: {
+                    min: 51.46,
+                    max: 51.55
+                }
+
+            }],
+            xAxes: [{
+              scaleLabel: {
+                display: true,
+                labelString: "Longitude"
+              },
+              ticks: {
+                    min: -0.262,
+                    max: 0.0388
+              }
+
+            }]
+          }
+        }
+    });
+}
+parseData(createBubble)
+
+
 
 //CSV DATA
 function parseData(createGraph){
@@ -132,7 +167,7 @@ function parseData(createGraph){
 function createGraph(data){
     console.log(data)
 
-    var raw_temp = document.getElementById('rawTemp').getContext('2d');
+    var raw_temp = document.getElementById('scatter_trends').getContext('2d');
 
     // Buffers for storing the selected array data for making chart
     var time = [];
