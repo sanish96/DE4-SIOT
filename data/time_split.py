@@ -50,7 +50,7 @@ for i in range(len(titles)):
         b = title2.split('.')
         date_list.append(b[0])
 
-print(len(date_list))
+print(date_list)
 
 
 for i in range(len(date_list)):
