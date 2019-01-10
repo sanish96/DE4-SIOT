@@ -17,27 +17,59 @@
     #bg {
     background-image: url(data/background3.jpg);
     }
+
+    #gry {
+    background-color: #f2f2f2;
+    }
+
     </style>
 
 
 </head>
 <body>
     <div class="container">
-      <h1>Sensing & IoT Coursework</h1>
+        <p>&nbsp;</p>
+        <h1>Santander Bicycle Availability Predictor </h1>
+        <p>&nbsp;</p>
       <div class="row">
-        <div>
-          <h3>Sanish Mistry</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ornare velit at est fringilla, eu ultricies mauris bibendum. </p>
+        <div id="gry">
+            <p>&nbsp;</p>
+            <select id="selectDock">
+                <option>Choose a Santander Dock Station</option>
+            </select>
+            <p>&nbsp;</p>
+            <select id="selectTime">
+                <option>Choose a time of day</option>
+            </select>
+            <p>&nbsp;</p>
+            <p>Click the button to get the predicted number of bicycles at the dock and time you picked!</p>
+
+            <button onclick="myFunction()">Go</button>
+
+            <h3 id="demo"></h3>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+
+
+            <script>
+            function myFunction() {
+              var a = Math.floor(Math.random()*15) + 1
+              var z = document.getElementById("selectDock").value;
+              var y = document.getElementById("selectTime").value;
+              var x = ("There will be " + a + " bicycles available at " + z + " at " + y)
+              document.getElementById("demo").innerHTML = x;
+            }
+            </script>
         </div>
         <div>
           <h2>Average Santander Bike Usage against Weather Conditions</h2>
-          <p> This graph shows the average Santander Bike usage over time</p>
+          <p> This graph shows the average Santander Bike usage over time in comparison to weather conditions in London.</p>
           <canvas id="time_trends" width="800" height="500"></canvas>
 
         </div>
         <div>
           <h2>Bicycles Available at Santander Docks</h2>
-          <p> This graph shows some weather and Santander Bike dock usage in London</p>
+          <p> This graph shows some weather and Santander Bike dock usage in London.</p>
         </div>
         <div id="bg">
           <canvas id="map_trends2" width="600px" height="320px"></canvas>
@@ -51,11 +83,11 @@
             <canvas id="scatter_trends" width="600" height="320"></canvas>
         </div>
         <div>
-          <h2>Average Variables</h2>
-          <p> This graph shows the average Santander Bike usage over time</p>
+          <h2>Bicycle usage By Hour of the Day</h2>
+          <p> This bar chart shows the average Santander Bike usage over time</p>
         </div>
         <div>
-            <canvas id="bar-chart-grouped" width="800" height="450"></canvas>
+            <canvas id="bar_trends" width="800" height="450"></canvas>
         </div>
       </div>
     </div>
