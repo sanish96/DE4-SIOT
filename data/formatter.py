@@ -59,9 +59,6 @@ print normalized_wind
 
 addresses = []
 
-for i in range(50):
-    addresses.append(csvFileArray[i][0])
-
 print addresses
 
 with open('data_averages.csv', mode='wb') as formatting:
